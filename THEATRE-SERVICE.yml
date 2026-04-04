@@ -1,13 +1,9 @@
-server:
-  port: 8089
-
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/bookingdb?serverTimezone=UTC
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,11 +17,9 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
   sql:
     init:
-      mode: always
-
+      mode: embedded
 eureka:
   client:
     service-url:
